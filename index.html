@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이중진자 시뮬레이션 프로그램-by 경환</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>이중 진자 시뮬레이션 프로그램<span class="creator-name">-by 경환</span></h1>
+    <div id="controls">
+        <div>
+            <label for="r1">첫째 진자 길이 (r1): <span id="r1_val">100</span></label>
+            <input type="range" id="r1" name="r1" min="10" max="200" value="100">
+        </div>
+        <div>
+            <label for="r2">둘째 진자 길이 (r2): <span id="r2_val">100</span></label>
+            <input type="range" id="r2" name="r2" min="10" max="200" value="100">
+        </div>
+        <div>
+            <label for="m1">첫째 질량 (m1): <span id="m1_val">10</span></label>
+            <input type="range" id="m1" name="m1" min="1" max="50" value="10">
+        </div>
+        <div>
+            <label for="m2">둘째 질량 (m2): <span id="m2_val">10</span></label>
+            <input type="range" id="m2" name="m2" min="1" max="50" value="10">
+        </div>
+        <div>
+            <label for="g_slider">중력 가속도 (g): <span id="g_val">1</span></label> <input type="range" id="g_slider" name="g_slider" min="0.1" max="5" value="1" step="0.1"> </div>
+        <button id="resetButton">시뮬레이션 초기화</button>
+    </div>
+
+    <div id="canvasContainer">
+        </div>
+
+    <script src="sketch.js"></script>
+</body>
+</html>
