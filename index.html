@@ -10,6 +10,7 @@
 </head>
 <body>
     <h1>이중 진자 시뮬레이션 프로그램<span class="creator-name">-by 경환</span></h1>
+
     <div id="controls">
         <div>
             <label for="r1">첫째 진자 길이 (r1): <span id="r1_val">100</span></label>
@@ -20,17 +21,21 @@
             <input type="range" id="r2" name="r2" min="10" max="200" value="100">
         </div>
         <div>
-            <label for="m1">첫째 질량 (m1): <span id="m1_val">1</span></label>
+            <label for="m1">첫째 질량 (m1): <span id="m1_val">5</span></label> {/* 초기 표시값 수정 */}
             <input type="range" id="m1" name="m1" min="1" max="10" value="5">
         </div>
         <div>
-            <label for="m2">둘째 질량 (m2): <span id="m2_val">1</span></label>
+            <label for="m2">둘째 질량 (m2): <span id="m2_val">5</span></label> {/* 초기 표시값 수정 */}
             <input type="range" id="m2" name="m2" min="1" max="10" value="5">
         </div>
-        
+        {/* --- 추가된 리셋 버튼 --- */}
+        <button id="resetButton">시뮬레이션 초기화</button>
+        {/* ---------------------- */}
+    </div>
 
     <div id="canvasContainer">
-        </div>
+        {/* p5.js 캔버스가 여기에 삽입됩니다. */}
+    </div>
 
     <script src="sketch.js"></script>
 </body>
