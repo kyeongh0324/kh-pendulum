@@ -40,7 +40,6 @@ function setup() {
     r2_slider.input(resetSimulation);
     m1_slider.input(resetSimulation);
     m2_slider.input(resetSimulation);
-    g_slider.input(resetSimulation);
 
     // 리셋 버튼 클릭 시 resetSimulation 함수 호출
     resetButton.mousePressed(resetSimulation);
