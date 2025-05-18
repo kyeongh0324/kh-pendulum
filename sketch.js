@@ -1,11 +1,14 @@
 // 시뮬레이션 파라미터 변수 선언
-let r1, r2, m1, m2, g; // 실제 값은 setup에서 HTML 슬라이더로부터 가져옴
+// 시뮬레이션 파라미터 변수 선언
+let r1, r2, m1, m2; // g는 아래에서 고정값으로 선언
+let g = 9.8;      // 중력 가속도 고정
 let a1, a2;           // 각도
 let a1_v = 0, a2_v = 0; // 각속도
 
 // HTML 요소들을 담을 변수 선언
-let r1_slider, r2_slider, m1_slider, m2_slider, g_slider;
-let r1_val_span, r2_val_span, m1_val_span, m2_val_span, g_val_span;
+let r1_slider, r2_slider, m1_slider, m2_slider; // g_slider 삭제
+let r1_val_span, r2_val_span, m1_val_span, m2_val_span; // g_val_span 삭제
+// ...
 let resetButton;
 
 // let trace; // 이 줄을 삭제하거나 주석 처리
@@ -23,15 +26,12 @@ function setup() {
     r2_slider = select('#r2');
     m1_slider = select('#m1');
     m2_slider = select('#m2');
-    g_slider = select('#g_slider');
 
     // HTML span (값 표시) 요소 가져오기
     r1_val_span = select('#r1_val');
     r2_val_span = select('#r2_val');
     m1_val_span = select('#m1_val');
     m2_val_span = select('#m2_val');
-    g_val_span = select('#g_val');
-
     // HTML 버튼 요소 가져오기
     resetButton = select('#resetButton');
 
@@ -57,15 +57,11 @@ function resetSimulation() {
     r2 = parseFloat(r2_slider.value());
     m1 = parseFloat(m1_slider.value());
     m2 = parseFloat(m2_slider.value());
-    g = parseFloat(g_slider.value());
-
     // span 태그에 현재 값 표시 업데이트
     r1_val_span.html(r1);
     r2_val_span.html(r2);
     m1_val_span.html(m1);
     m2_val_span.html(m2);
-    g_val_span.html(g);
-
     // 시뮬레이션 상태(각도, 각속도) 초기화
     a1 = PI / 2; // 초기 각도
     a2 = PI / 2; // 초기 각도
@@ -77,7 +73,7 @@ function resetSimulation() {
 trace1 = []; // 첫 번째 진자 자취 초기화
 trace2 = []; // 두 번째 진자 자취 초기화
     console.log("시뮬레이션 초기화됨. 현재 값:");
-    console.log(`r1=<span class="math-inline">\{r1\}, r2\=</span>{r2}, m1=<span class="math-inline">\{m1\}, m2\=</span>{m2}, g=${g}`);
+   console.log(`r1=<span class="math-inline">\{r1\}, r2\=</span>{r2}, m1=<span class="math-inline">\{m1\}, m2\=</span>{m2} (g는 ${g}로 고정)`); // 수정된 로그 예시
 }
 // p5.js의 draw 함수: setup 함수 실행 후 반복적으로 계속 실행됩니다. (애니메이션 효과)
 function draw() {
